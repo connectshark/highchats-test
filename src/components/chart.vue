@@ -16,42 +16,44 @@ export default {
         scrollbar: {
           enabled: false
         },
+        tooltip: {
+          enabled: false
+        },
         title: {
           text: 'AAPL Historical'
+        },
+        chart: {
+          ignoreHiddenSeries: false
+        },
+        credits: {
+          enabled: false
         },
         yAxis: [{
           labels: {
             align: 'right',
             x: -3
           },
-          title: {
-            text: 'OHLC'
-          },
-          height: '60%',
+          height: '90%',
           lineWidth: 2,
           resize: {
             enabled: true
           }
-        }, {
+        },
+        {
           labels: {
             align: 'right',
             x: -3
           },
-          title: {
-            text: 'Volume'
-          },
-          top: '65%',
-          height: '35%',
+          top: '90%',
+          height: '10%',
           offset: 0,
-          lineWidth: 2
+          lineWidth: 2,
+          visible: false
         }],
-        tooltip: {
-          split: true
-        },
 
         series: [{
           type: 'candlestick',
-          name: 'AAPL',
+          name: undefined,
           data: [[1558359000000, 45.88, 46.09, 45.07, 45.77, 154449200],
             [1558445400000, 46.31, 47, 46.17, 46.65, 113459200],
             [1558531800000, 46.17, 46.43, 45.64, 45.69, 118994400],
@@ -61,10 +63,18 @@ export default {
             [1559136600000, 44.1, 44.84, 44, 44.35, 113924800]],
           dataGrouping: {
             units: [['week', [1]], ['month', [1, 2, 3, 4, 6]]]
+          },
+          states: {
+            hover: {
+              enabled: false
+            },
+            inactive: {
+              enabled: false
+            }
           }
         }, {
           type: 'column',
-          name: 'Volume',
+          name: undefined,
           data: [[1558359000000, 154449200],
             [1558445400000, 113459200],
             [1558531800000, 118994400],
@@ -75,6 +85,14 @@ export default {
           yAxis: 1,
           dataGrouping: {
             units: [['week', [1]], ['month', [1, 2, 3, 4, 6]]]
+          },
+          states: {
+            hover: {
+              enabled: false
+            },
+            inactive: {
+              enabled: false
+            }
           }
         }]
       }
