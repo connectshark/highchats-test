@@ -5,7 +5,9 @@ import router from './router'
 import HighchartsVue from 'highcharts-vue'
 import Highcharts from 'highcharts'
 import Stock from 'highcharts/modules/stock'
+import More from 'highcharts/highcharts-more'
 
+More(Highcharts)
 Stock(Highcharts)
 
 Vue.use(HighchartsVue)
