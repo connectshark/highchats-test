@@ -28,6 +28,13 @@ export default {
         credits: {
           enabled: false
         },
+        xAxis: [{
+          plotLines: [{
+            dashStyle: 'dash',
+            value: 1559136600000,
+            color: '#ccc'
+          }]
+        }],
         yAxis: [{
           labels: {
             align: 'right',
@@ -52,8 +59,23 @@ export default {
         }],
 
         series: [{
+          type: 'line',
+          data: [
+            [1558359000000, 45.77],
+            [1558445400000, 46.65],
+            [1558531800000, 45.69],
+            [1558618200000, 44.92],
+            [1558704600000, 44.74],
+            [1559050200000, 44.56],
+            [1559136600000, 44.35]
+          ],
+          states: {
+            inactive: {
+              enabled: false
+            }
+          }
+        }, {
           type: 'candlestick',
-          name: undefined,
           data: [[1558359000000, 45.88, 46.09, 45.07, 45.77, 154449200],
             [1558445400000, 46.31, 47, 46.17, 46.65, 113459200],
             [1558531800000, 46.17, 46.43, 45.64, 45.69, 118994400],
@@ -64,17 +86,21 @@ export default {
           dataGrouping: {
             units: [['week', [1]], ['month', [1, 2, 3, 4, 6]]]
           },
+          upColor: '#32BAA0',
+          upLineColor: '#32BAA0',
+          color: '#FC5F5F',
+          lineColor: '#FC5F5F',
+          lastPrice: {
+            enabled: true,
+            color: '#ccc'
+          },
           states: {
-            hover: {
-              enabled: false
-            },
             inactive: {
               enabled: false
             }
           }
         }, {
           type: 'column',
-          name: undefined,
           data: [[1558359000000, 154449200],
             [1558445400000, 113459200],
             [1558531800000, 118994400],
@@ -87,9 +113,6 @@ export default {
             units: [['week', [1]], ['month', [1, 2, 3, 4, 6]]]
           },
           states: {
-            hover: {
-              enabled: false
-            },
             inactive: {
               enabled: false
             }

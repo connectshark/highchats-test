@@ -6,7 +6,9 @@ import HighchartsVue from 'highcharts-vue'
 import Highcharts from 'highcharts'
 import Stock from 'highcharts/modules/stock'
 import More from 'highcharts/highcharts-more'
+import Indicator from 'highcharts/modules/price-indicator'
 
+Indicator(Highcharts)
 More(Highcharts)
 Stock(Highcharts)
 
